@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Design tokens & base
+   Fonts are injected as CSS variables by next/font in layout.tsx:
+   --font-imfell, --font-cinzel, --font-inter
+   ============================================================ */
+@layer base {
+  :root {
+    --color-brand: 214 40 40; /* #d62828 */
+    --color-charcoal: 22 22 22; /* #161616 */
+    --color-gold: 198 161 91; /* #c6a15b */
+    --nav-height: 4.75rem;
+  }
+
+  * {
+    @apply border-charcoal-200;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-charcoal-900 font-sans antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading text-charcoal-900;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    @apply bg-brand-600 text-white;
+  }
+
+  /* Focus visibility for keyboard users */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-600 ring-offset-2 ring-offset-white rounded-sm;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-mist;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-charcoal-300 rounded-full border-2 border-solid border-mist;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-charcoal-400;
+  }
+}
+
+/* ============================================================
+   Reusable component utilities
+   ============================================================ */
+@layer components {
+  .section {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .eyebrow {
+    @apply font-display text-xs md:text-sm font-semibold uppercase tracking-[0.28em] text-brand-600;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-br from-charcoal-900 via-charcoal-800 to-charcoal-600 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-brand {
+    @apply bg-gradient-to-br from-brand-500 to-brand-700 bg-clip-text text-transparent;
+  }
+
+  /* Glass surface — used sparingly (nav, chips, lightbox controls) */
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl backdrop-saturate-150 border border-white/60;
+  }
+
+  .glass-dark {
+    @apply bg-charcoal-900/70 backdrop-blur-xl backdrop-saturate-150 border border-white/10;
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-brand-600 after:transition-all after:duration-300 after:ease-premium hover:after:w-full;
+  }
+
+  .card-surface {
+    @apply rounded-4xl bg-white border border-charcoal-100 shadow-soft;
+  }
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Fade edges for horizontal scroll rows / marquees */
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 6%,
+      #000 94%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 6%,
+      #000 94%,
+      transparent
+    );
+  }
+
+  .text-shadow-soft {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ============================================================
+   Motion preferences
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
