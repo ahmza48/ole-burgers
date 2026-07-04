@@ -28,8 +28,8 @@ function Logo({ onClick }: { onClick?: () => void }) {
           Olé{' '}
           <span className="text-brand-600">Burgers</span>
         </span>
-        <span className="font-display text-[0.6rem] uppercase tracking-[0.32em] text-charcoal-400">
-          Premium Grill
+        <span className="font-display text-[0.6rem] uppercase tracking-[0.32em] text-charcoal-700">
+          Portuguese Style Chicken, Burger & Wrap
         </span>
       </span>
     </a>
@@ -81,7 +81,7 @@ export function Navbar() {
                 key={link.id}
                 href={link.href}
                 className={cn(
-                  'relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300',
+                  'font-heading relative rounded-full px-4 py-2 text-lg transition-colors duration-300',
                   isActive
                     ? 'text-brand-600'
                     : 'text-charcoal-600 hover:text-charcoal-900',
@@ -107,7 +107,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="hidden sm:block"
           >
-            <Button size="sm" className="px-5">
+            <Button size="sm" className="text-lg font-heading">
               Order Now
             </Button>
           </a>

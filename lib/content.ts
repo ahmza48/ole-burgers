@@ -25,8 +25,8 @@ export const featuredBurgers: FeaturedBurger[] = [
       'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80',
   },
   {
-    id: 'feat-truffle-royale',
-    name: 'Truffle Royale',
+    id: 'feat-truffle-royale', //need to fix this as well
+    name: 'Big Olé',
     description:
       'Wagyu-blend patty, Swiss, truffle aioli and wild mushrooms. Pure indulgence.',
     price: 16.9,
@@ -37,14 +37,15 @@ export const featuredBurgers: FeaturedBurger[] = [
   },
   {
     id: 'feat-inferno',
-    name: 'Inferno Smash',
+    name: 'Crispy Chicken',
     description:
-      'Double beef, pepper jack, jalapeño and spicy honey glaze for the heat seekers.',
+      'Crispy golden-fried chicken layered with fresh lettuce, creamy mayo, and melted cheese in a toasted brioche bun.',
     price: 13.9,
     badge: 'Spicy',
     // REPLACE WITH REAL IMAGE
     image:
-      'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=80',
+      // 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1637710847214-f91d99669e18?q=80&w=421&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 ];
 
@@ -137,49 +138,49 @@ export const galleryImages: GalleryImage[] = [
   {
     id: 'g-1',
     src: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=80',
-    alt: 'Juicy double cheeseburger with melted cheddar',
+    alt: 'Stacked bacon cheeseburger close-up',
     span: 'tall',
   },
   {
     id: 'g-2',
     src: 'https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=900&q=80',
-    alt: 'Gourmet burger with fresh toppings on a wooden board',
+    alt: 'Gourmet burger with fresh toppings',
     span: 'wide',
   },
   {
     id: 'g-3',
     src: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=900&q=80',
-    alt: 'Crispy golden fries in a basket',
+    alt: 'Chef special beef signature',
     span: 'normal',
   },
   {
     id: 'g-4',
     src: 'https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6?auto=format&fit=crop&w=900&q=80',
-    alt: 'Stacked bacon cheeseburger close-up',
+    alt: 'Juicy double cheeseburger with melted cheddar',
     span: 'normal',
   },
   {
     id: 'g-5',
-    src: 'https://images.unsplash.com/photo-1610614819513-58e34989e371?auto=format&fit=crop&w=900&q=80',
+    src: 'https://plus.unsplash.com/premium_photo-1663089784548-19b7825bc33c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hlZiUyMGFzc2VtYmxpbmclMjBhJTIwZnJlc2glMjBidXJnZXIlMjBpbiUyMHRoZSUyMGtpdGNoZW58ZW58MHx8MHx8fDA%3D',
     alt: 'Chef assembling a fresh burger in the kitchen',
     span: 'wide',
   },
   {
     id: 'g-6',
-    src: 'https://images.unsplash.com/photo-1547584370-2cc98b8b8dc8?auto=format&fit=crop&w=900&q=80',
+    src: 'https://images.unsplash.com/photo-1551782450-17144efb9c50?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BlY2lhbCUyMGNoaWNrZW4lMjB0ZW5kZXIlMjBidXJnZXJ8ZW58MHx8MHx8fDA%3D',
     alt: 'Burger and fries meal with a soft drink',
     span: 'tall',
   },
   {
     id: 'g-7',
     src: 'https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=900&q=80',
-    alt: 'Warm, modern restaurant interior',
+    alt: 'Classic chicken tender burgers',
     span: 'normal',
   },
   {
     id: 'g-8',
     src: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=900&q=80',
-    alt: 'Thick milkshake topped with cream',
+    alt: 'Mega beef burger with fries',
     span: 'normal',
   },
 ];

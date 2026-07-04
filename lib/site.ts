@@ -16,26 +16,31 @@ export const site: SiteConfig = {
   locale: 'en_US',
 
   // REPLACE with real contact details.
-  phone: '+1 (555) 018-2280',
-  phoneHref: 'tel:+15550182280',
-  whatsapp: '15550182280', // digits only, international format
-  email: 'hello@oleburgers.example.com',
+  phone: '+61 2 9661 8055',
+  phoneHref: 'tel:+61296618055',
+  whatsapp: '+61296618055', // digits only, international format
+  email: 'contact@oleburgers.example.com',
 
   address: {
-    street: '128 Grill Avenue',
-    city: 'Austin',
-    region: 'TX',
-    postalCode: '78701',
-    country: 'USA',
-    full: '128 Grill Avenue, Austin, TX 78701',
+    street: '442 Bunnerong Rd',
+    city: 'Sydney',
+    region: 'Matraville',
+    postalCode: 'NSW 2036',
+    country: 'Austalia',
+    full: '442 Bunnerong Rd, Matraville NSW 2036, Australia',
   },
   geo: { lat: 30.267153, lng: -97.743057 },
-  // REPLACE with the restaurant's real Google Maps embed src.
+  // // REPLACE with the restaurant's real Google Maps embed src.
+  // mapEmbedSrc:
+  //   'https://www.google.com/maps?q=Austin%2C%20TX&output=embed',
+  // mapLink: 'https://www.google.com/maps/search/?api=1&query=Austin,TX',
   mapEmbedSrc:
-    'https://www.google.com/maps?q=Austin%2C%20TX&output=embed',
-  mapLink: 'https://www.google.com/maps/search/?api=1&query=Austin,TX',
+    'https://www.google.com/maps?q=Ole+Burgers+Matraville&output=embed',
 
-  priceRange: '$$',
+  mapLink:
+    'https://www.google.com/maps/search/?api=1&query=Ole+Burgers+Matraville',
+  
+    priceRange: '$$',
   cuisine: ['Burgers', 'American', 'Fast Food'],
 
   hours: [

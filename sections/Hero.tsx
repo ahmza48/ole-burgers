@@ -21,7 +21,7 @@ export function Hero() {
   // Subtle parallax on the hero image + copy as the user scrolls away.
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const copyY = useTransform(scrollYProgress, [0, 1], [0, 60]);
-  const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0.5]);
 
   return (
     <section
@@ -81,7 +81,7 @@ export function Hero() {
 
             <motion.p
               variants={fadeInUp}
-              className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-charcoal-500 lg:mx-0"
+              className="mx-auto mt-6 max-w-xl text-xl leading-relaxed text-charcoal-500 lg:mx-0 font-heading"
             >
               Fresh, hand-pressed patties, flame-grilled to order and stacked
               with locally sourced produce. This is {site.name} —{' '}

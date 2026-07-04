@@ -66,7 +66,7 @@ function FeaturedCard({ burger, index }: { burger: FeaturedBurger; index: number
 
 export function FeaturedBurgers() {
   return (
-    <section id="featured" className="section relative bg-white">
+    <section id="featured" className="section relative bg-white pb-0.125">
       <Container>
         <SectionHeading
           eyebrow="Best Sellers"

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useMemo, useRef, useState } from 'react';
-import { FiSearch, FiX } from 'react-icons/fi';
+import { FiSearch, FiX, FiArrowUpRight } from 'react-icons/fi';
 import { FaFire, FaLeaf } from 'react-icons/fa';
 import { menuCategories, menuItems } from '@/lib/menu';
 import { site } from '@/lib/site';
@@ -107,7 +107,7 @@ export function Menu() {
   const activeCategory = menuCategories.find((c) => c.id === activeCat);
 
   return (
-    <section id="menu" className="section relative scroll-mt-24 bg-mist">
+    <section id="menu" className="section relative scroll-mt-24 bg-mist pt-5 pb-8">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white to-transparent"
@@ -159,7 +159,7 @@ export function Menu() {
         <div
           ref={tabsRef}
           className={cn(
-            'sticky top-[4.75rem] z-30 -mx-5 mt-8 px-5 py-3 transition-all duration-300',
+            'sticky top-[4rem] z-30 -mx-5 mt-8 px-5 py-3 transition-all duration-300',
             'supports-[backdrop-filter]:bg-mist/80 backdrop-blur-lg',
           )}
         >
@@ -214,7 +214,7 @@ export function Menu() {
             ))}
           </AnimatePresence>
         </motion.div>
-
+        
         {/* Empty state */}
         {filtered.length === 0 && (
           <motion.div

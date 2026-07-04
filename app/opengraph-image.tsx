@@ -54,7 +54,7 @@ export default function OpengraphImage() {
               color: '#c6a15b',
             }}
           >
-            Premium Grill
+            Portuguese Style Chicken, Burger & Wrap
           </div>
         </div>
 
