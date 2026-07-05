@@ -132,7 +132,9 @@ export function Footer() {
           <p className="flex items-center gap-1.5">
             Powered by{' '}
             <a
-              href="#"
+              href="https://www.axenity.com"
+              target='_blank'
+              rel="noopener noreferrer"
               className="font-display uppercase tracking-[0.2em] text-gold-400 transition-colors hover:text-gold-300"
             >
               Axenity
