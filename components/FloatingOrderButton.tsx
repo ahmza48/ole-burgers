@@ -11,7 +11,8 @@ import { whatsappLink } from '@/lib/utils';
  * where the header CTA is hidden. Links straight to WhatsApp ordering.
  */
 export function FloatingOrderButton() {
-  const [hideButton, setHideButton] = useState(false);
+  const [heroPassed, setHeroPassed] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   useEffect(() => {
@@ -19,15 +20,13 @@ export function FloatingOrderButton() {
 
     if (!footer) return;
 
-    const rootMargin = `0px 0px -${window.innerHeight * 0.2}px 0px`;
-
     const observer = new IntersectionObserver(
         ([entry]) => {
-            setHideButton(entry.isIntersecting);
+            setFooterVisible(entry.isIntersecting);
         },
         {
             root: null,
-            rootMargin,
+            rootMargin: "0px 0px -150px 0px",
             threshold: 0,
         }
     );
@@ -36,6 +35,28 @@ export function FloatingOrderButton() {
 
     return () => observer.disconnect();
   }, []);
+  useEffect(() => {
+    const hero = document.getElementById("home");
+
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            // When hero is no longer visible,
+            // we've scrolled past it.
+            setHeroPassed(!entry.isIntersecting);
+        },
+        {
+            threshold: 0.15,
+        }
+    );
+
+    observer.observe(hero);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const shouldShow = heroPassed && !footerVisible;
 
   return (
     <AnimatePresence>
@@ -46,10 +67,10 @@ export function FloatingOrderButton() {
           rel="noopener noreferrer"
           initial={{ opacity: 0, scale: 0.6, y: 16 }}
           animate={{
-            opacity: hideButton ? 0 : 1,
-            y: hideButton ? 30 : 0,
-            scale: hideButton ? 0.9 : 1,
-            pointerEvents: hideButton ? "none" : "auto",
+            opacity: shouldShow ? 1 : 0,
+            y: shouldShow ? 0 : 30,
+            scale: shouldShow ? 1 : 0.9,
+            pointerEvents: shouldShow ? "auto" : "none",
           }}
           exit={{ opacity: 0, scale: 0.6 }}
           whileHover={{ scale: 1.05 }}
