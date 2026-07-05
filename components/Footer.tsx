@@ -18,7 +18,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-charcoal-950 text-charcoal-100">
+    <footer id="footer" className="relative overflow-hidden bg-charcoal-950 text-charcoal-100">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-brand-600/20 blur-3xl"

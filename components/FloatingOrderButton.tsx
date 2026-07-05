@@ -11,8 +11,31 @@ import { whatsappLink } from '@/lib/utils';
  * where the header CTA is hidden. Links straight to WhatsApp ordering.
  */
 export function FloatingOrderButton() {
+  const [hideButton, setHideButton] = useState(false);
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const footer = document.getElementById("footer");
+
+    if (!footer) return;
+
+    const rootMargin = `0px 0px -${window.innerHeight * 0.2}px 0px`;
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            setHideButton(entry.isIntersecting);
+        },
+        {
+            root: null,
+            rootMargin,
+            threshold: 0,
+        }
+    );
+
+    observer.observe(footer);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <AnimatePresence>
@@ -22,7 +45,12 @@ export function FloatingOrderButton() {
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, scale: 0.6, y: 16 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
+          animate={{
+            opacity: hideButton ? 0 : 1,
+            y: hideButton ? 30 : 0,
+            scale: hideButton ? 0.9 : 1,
+            pointerEvents: hideButton ? "none" : "auto",
+          }}
           exit={{ opacity: 0, scale: 0.6 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -37,7 +65,7 @@ export function FloatingOrderButton() {
           />
           <FaWhatsapp className="h-5 w-5 shrink-0" />
           <span className="hidden text-sm font-semibold sm:inline">
-            Order Now
+            WhatsApp Order
           </span>
         </motion.a>
       )}

@@ -101,7 +101,7 @@ export function Hero() {
                 className="w-full sm:w-auto"
               >
                 <Button size="lg" fullWidth className="sm:w-auto">
-                  Order Now
+                  Start Order
                   <FiArrowRight className="h-5 w-5" />
                 </Button>
               </a>
@@ -200,21 +200,6 @@ export function Hero() {
           </motion.div>
         </div>
       </Container>
-
-      {/* Scroll indicator */}
-      <motion.a
-        href="#featured"
-        aria-label="Scroll to featured burgers"
-        style={{ opacity: fade }}
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-charcoal-400 md:flex"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <span className="font-display text-[0.65rem] uppercase tracking-[0.3em]">
-          Scroll
-        </span>
-        <FiChevronDown className="h-5 w-5" />
-      </motion.a>
     </section>
   );
 }
